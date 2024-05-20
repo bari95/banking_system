@@ -5,7 +5,7 @@ import HeaderBox from '@/components/ui/HeaderBox'
 import TotalBalanceBox from '@/components/ui/TotalBalanceBox';
 
 function Home() {
-    const loggedIn={firstName:'Adrian'};
+    const loggedIn={firstName:'Bari Kaneno'};
   return (
     <section className='home'>
         <div className='home-content'>
