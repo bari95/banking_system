@@ -8,7 +8,7 @@ import Image from 'next/image'
 function BankCard({account,showBalance=true,userName}:CreditCardProps) {
   
   console.log('this is a username in the BankCard',userName)
-  userName=userName.split(' ').filter(content => content != "undefined").join('')
+  //userName=userName.split(' ').filter(content => content != "undefined").join('')
   
     return (
     <div className='flex flex-col'>

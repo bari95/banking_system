@@ -1,13 +1,17 @@
 
 
-import React from 'react'
+import React from 'react';
 import HeaderBox from '@/components/ui/HeaderBox'
 import TotalBalanceBox from '@/components/ui/TotalBalanceBox';
 import RightSideBar from '@/components/ui/RightSideBar';
+import { getLoggedInUser } from '@/lib/actions/user.actions';
+import { redirect } from 'next/navigation';
 
-function Home() {
-    const loggedIn={firstName:'Bari',
-                    email:"kanenobariki@gmail.com"};
+async function Home() {
+    const loggedIn=await getLoggedInUser()
+    if(!loggedIn){
+      redirect('/sign-in')
+    }
   return (
     <section className='home'>
         <div className='home-content'>
@@ -16,7 +20,7 @@ function Home() {
                     <HeaderBox 
                     type='greeting'
                     title='welcome'
-                    user={loggedIn?.firstName || 'guest'}
+                    user={loggedIn?.name || 'guest'}
                     subtext=' Acces and manage your accounts efficiently'/>
 
                     <TotalBalanceBox 
